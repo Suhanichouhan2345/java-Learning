@@ -1,0 +1,116 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        int i = 0;
+        int j = s.length() - 1;
+
+        while (i < j) {
+            char left = s.charAt(i);
+            char right = s.charAt(j);
+
+            if (!Character.isLetterOrDigit(left)) {
+                i++;
+                continue;
+            }
+
+            if (!Character.isLetterOrDigit(right)) {
+                j--;   
+                continue;
+            }
+
+            if (Character.toLowerCase(left) != Character.toLowerCase(right)) {
+                return false;
+            }
+
+            i++;
+            j--;
+        }
+
+        return true;
+    }
+}
+
+//-----------------
+class Solution {
+    public void reverseString(char[] s) {
+        int n = s.length;
+        int low = 0;
+        int high = n-1;
+        while(low < high ){
+            char temp = s[low];
+            s[low] = s[high];
+            s[high] = temp;
+            low++;
+            high--;       
+             }
+    }
+}
+//------------------
+
+public class QuickSortExample {
+
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
+
+            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high]; 
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // swap pivot to correct position
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {7, 2, 9, 3, 11, 4, 8, 16, 5, 13};
+
+        quickSort(arr, 0, arr.length - 1);
+
+        // print sorted array
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+//-------------------------------------------
+
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 8};
+        int[] arr2 = {3, 5, 4, 8};
+        int[] arr3 = {43, 5, 8, 3};
+
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                for (int k = 0; k < arr3.length; k++) {
+                    if (arr1[i] == arr2[j] && arr1[i] == arr3[k]) {
+                        System.out.println(arr1[i]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+outpute = 3 ,8;

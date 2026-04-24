@@ -1,0 +1,101 @@
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 8};
+        int[] arr2 = {3, 5, 4, 8};
+        int[] arr3 = {43, 5, 8, 3};
+
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                for (int k = 0; k < arr3.length; k++) {
+                    if (arr1[i] == arr2[j] && arr1[i] == arr3[k]) {
+                        System.out.println(arr1[i]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 8};
+        int[] arr2 = {3, 5, 4, 8};
+        int[] arr3 = {43, 5, 8, 3};
+        for (int i = 0; i < arr1.length; i++) {
+
+            int flag = 0; 
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+     for (int k = 0; k < arr3.length; k++) {
+                        if (arr1[i] == arr3[k]) {
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+
+            if (flag == 1) {
+                System.out.println( arr1[i]);
+            }
+        }
+    }
+}
+
+//-------------------------
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 8};
+        int[] arr2 = {3, 5, 4, 8};
+        int[] arr3 = {43, 5, 8, 3};
+
+        for (int i = 0; i < arr1.length; i++) {
+            int count = 0;
+            int count1 = 0;
+
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    count++;
+                    break;
+                }
+            }
+            for (int k = 0; k < arr3.length; k++) {
+                if (arr1[i] == arr3[k]) {
+                    count1++;
+                    break;
+                }
+            }
+            if (count > 0 && count1 > 0) { 
+                System.out.println(arr1[i]);
+            }
+           }
+    }
+    }
+
+//-------------------------
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 8};
+      int  large  =arr1[0];
+      int small = arr1[0];
+
+       for (int i = 1; i < arr1.length; i++) {
+            if (arr1[i] > large ) {
+                large = arr1[i];
+            }
+            if (arr1[i] < small) {
+                small = arr1[i];
+            }
+       }
+        
+          System.out.println(large );
+          System.out.println(small );
+      
+    }
+    }
