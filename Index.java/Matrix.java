@@ -16,7 +16,7 @@ public class Matrix {
             System.out.println("Matrix multiplication not possible!");
             return;
         }
-
+        
         int A[][] = new int[r1][c1];
         int B[][] = new int[r2][c2];
         int C[][] = new int[r1][c2];
