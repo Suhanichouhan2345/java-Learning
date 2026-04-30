@@ -1,22 +1,22 @@
-class closestPair{
+class ClosestPair {
     public static void main(String[] args) {
-       int arr[] = {2, 3, 5};
+        int arr[] = { 2, 3, 5 };
         int x = 4;
+
+        int closepair = Integer.MAX_VALUE;
         int temp1 = 0;
-        int temp2  = 0;
-        for (int i = 0; i < arr.length; i++) {
+        int temp2 = 0;
+
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 int sum = arr[i] + arr[j];
-            int diff = sum-x;
-            if(diff <= x){
-         temp1= arr[i];
-         temp2= arr[j];
-         diff = x;
+                if (Math.abs(x - sum) < Math.abs(x - closepair)) {
+                    closepair = sum;
+                    temp1 = arr[i];
+                    temp2 = arr[j];
+                }
             }
-        
-            System.out.println(diff);
-            
-    }
         }
-}
+        System.out.println(closepair);
+    }
 }
