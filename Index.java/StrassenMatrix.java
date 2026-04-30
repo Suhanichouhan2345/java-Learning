@@ -19,9 +19,7 @@ public class StrassenMatrix {
             for(int j = 0; j < n; j++) {
                 B[i][j] = sc.nextInt();
             }
-        }
-
-      
+        }      
         if(n == 2) {
     
             int A11 = A[0][0];

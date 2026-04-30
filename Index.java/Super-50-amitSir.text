@@ -933,3 +933,59 @@ public class StrassenMatrix {
       
     }
 }
+
+//-------------------------------------
+
+class ClosestPair {
+    public static void main(String[] args) {
+        int arr[] = {2, 3, 5};
+        int x = 4;
+
+        int closestSum = Integer.MAX_VALUE;
+        int num1 = 0, num2 = 0;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                int sum = arr[i] + arr[j];
+
+                if (Math.abs(x - sum) < Math.abs(x - closestSum)) {
+                    closestSum = sum;
+                    num1 = arr[i];
+                    num2 = arr[j];
+                }
+            }
+        }
+
+        System.out.println("Closest pair: " + num1 + ", " + num2);
+        System.out.println("Closest sum: " + closestSum);
+    }
+}
+//--------------------------------------
+
+class ClosestPair {
+    public static void main(String[] args) {
+
+        int arr[] = {2, 3, 5};
+        int x = 4;
+
+        int closestSum = 1000;  // big number
+        int a = 0, b = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+
+                int sum = arr[i] + arr[j];
+
+                // check which sum is closer to x
+                if (Math.abs(x - sum) < Math.abs(x - closestSum)) {
+                    closestSum = sum;
+                    a = arr[i];
+                    b = arr[j];
+                }
+            }
+        }
+
+        System.out.println("Numbers: " + a + " and " + b);
+        System.out.println("Closest Sum: " + closestSum);
+    }
+}
