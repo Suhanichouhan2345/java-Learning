@@ -989,3 +989,169 @@ class ClosestPair {
         System.out.println("Closest Sum: " + closestSum);
     }
 }
+//------------------------------------
+
+public class WaveForm {
+    public static void main(String[] args) {
+        int arr[] = {1, 5, 3, 2, 5, 9, 7, 3, 7, 4, 8};
+
+        // Wave form: arr[0] >= arr[1] <= arr[2] >= arr[3] <=...
+        for(int i = 0; i < arr.length - 1; i++) {
+
+            // Even index: arr[i] >= arr[i+1] hona chahiye
+            if(i % 2 == 0) {
+                if(arr[i] < arr[i + 1]) {
+                    // Swap kar de
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+            // Odd index: arr[i] <= arr[i+1] hona chahiye
+            else {
+                if(arr[i] > arr[i + 1]) {
+                    // Swap kar de
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+        }
+
+        // Print array
+        System.out.print("Wave form: ");
+        for(int val : arr) {
+            System.out.print(val + " ");
+        }
+    }
+}
+//---------------------------
+public class Moverzero {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 45, 5, 0, 0, 7, 5, 0};
+        int n = arr.length;
+        int index = 0; // non-zero ka position
+
+        // Step 1: Saare non-zero aage le aao
+        for (int i = 0; i < n; i++) {
+            if (arr[i]!= 0) {
+                arr[index] = arr[i];
+                index++;
+            }
+        }
+
+        // Step 2: Baaki jagah zero bhar do
+        while (index < n) {
+            arr[index] = 0;
+            index++;
+        }
+
+        // Print karo
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+}
+//-------------------------
+public class Moverzero {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 45, 5, 0, 0, 7, 5, 0};
+        int n = arr.length;
+        int left = 0; // non-zero ke liye
+        int right = n - 1; // zero ke liye
+        int temp[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            int a = arr[i];
+
+            if (a!= 0) {
+                temp[left] = a; // zero nahi hai to left me daal
+                left++; // left aage badha
+            } else {
+                temp[right] = a; // zero hai to right me daal
+                right--; // right piche kar
+            }
+        }
+
+        // Print kar de result
+        System.out.print("Result: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(temp[i] + " ");
+        }
+    }
+}
+
+
+//--------------------------------------------------
+
+public class Moverzero {
+    public static void main(String[] args) {
+        int arr [] = {1,2,3,45,5,0,0,7,5,0};
+        int n = arr.length;
+        int left = 0;
+        int right = n-1;
+        int temp[] = new int[n];
+        for(int i =0; i<arr.length; i++){
+            int a = arr[i];
+            
+            if(a!=0){
+            temp[left] = arr[i];
+              left++;
+        } else{
+             temp[right] = arr[i];
+              right--;
+        }
+    }
+           for(int i =0; i<n; i++){
+            System.out.print(temp[i] + " ");
+           }
+    }
+}
+
+//=============================
+
+public class movesame {
+    public static void main(String[] args) {
+        int arr[] = {1, 1, 1, 1, 2, 2, 3, 4, 4};
+
+        for (int i = 0; i < arr.length; i++) {
+            boolean isDuplicate = false; // maan le ye naya hai
+
+            // Check kar ki kya ye pehle aa chuka hai?
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDuplicate = true; // haa pehle aa chuka
+                    break; // aur check mat kar
+                }
+            }
+
+            // Agar pehle nahi aaya to print kar de
+            if (isDuplicate == false) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
+//-------------------
+public class movesame {
+    public static void main(String[] args) {
+        int arr[] = {1, 1, 1, 1, 2, 2, 3, 4, 4};
+
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0; // ye check karega pehle aaya ya nahi
+
+            // Peeche check karo ki same element hai kya
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    count = 1; // mil gaya pehle, to count badha do
+                    break;
+                }
+            }
+
+            // Agar count 0 hai matlab pehli baar aaya hai
+            if (count == 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
