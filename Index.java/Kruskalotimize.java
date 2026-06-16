@@ -32,7 +32,7 @@ public class Kruskalotimize {
         }
     }
 
-    // Kruskal ka main logic
+    
     public static void main(String[] args) {
         int n = 4;
         int e = 5; 
