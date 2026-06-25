@@ -3,7 +3,7 @@ public class product {
         int[] arr = { 1, 2, 3, 4, 5, 6 };
         int n = arr.length;
         int temp [] = new int[n];
-        int product = 1;
+       
         for (int i = 0; i < arr.length; i++) {
             int num = arr[i];
             for (int j = num; j < arr.length; j++) {
